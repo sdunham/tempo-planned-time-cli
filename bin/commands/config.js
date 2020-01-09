@@ -1,6 +1,6 @@
 // Grab the modules we'll need
 const Conf = require('conf');
-const config = new Conf();
+const config = new Conf({projectName: 'tempo-planned-time-cli'});
 const chalk = require('chalk');
 const url = require('url');
 

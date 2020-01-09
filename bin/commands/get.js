@@ -1,6 +1,6 @@
 // Grab the modules we'll need
 const Conf = require('conf');
-const config = new Conf();
+const config = new Conf({projectName: 'tempo-planned-time-cli'});
 const Moment = require('moment');
 const MomentRange = require('moment-range');
 const moment = MomentRange.extendMoment(Moment);
@@ -30,6 +30,25 @@ exports.builder = (yargs) => {
     });
 };
 
+// Get the from and to date strings for a given plan object
+// In some cases (i.e. recurring plans), the startDate and endDate values aren't accurate
+// so first we check for an object in the dates.values array that has what we need first
+const getPlanFromAndToDates = plan => {
+  const dateValues = plan.dates.values.find(value => value.from && value.to);
+
+  if (dateValues) {
+    return {
+      from: dateValues.from,
+      to: dateValues.to
+    };
+  }
+
+  return {
+    from: startDate,
+    to: endDate
+  };
+};
+
 // Helper function for mapping an array of plan objects to a date range
 const mapPlans = (from, to, plans) => {
   // Create a range object spanning the start of the from date to the end of the to date
@@ -46,8 +65,9 @@ const mapPlans = (from, to, plans) => {
   // Grab the relevant data from each plan and put it in the array for each
   // applicable day in the queried range
   plans.forEach(plan => {
-    const start = moment(plan.startDate, 'YYYY-MM-DD');
-    const end = moment(plan.endDate, 'YYYY-MM-DD');
+    const planDates = getPlanFromAndToDates(plan);
+    const start = moment(planDates.from, 'YYYY-MM-DD');
+    const end = moment(planDates.to, 'YYYY-MM-DD');
     const planRange = moment.range(start.startOf('day'), end.endOf('day'));
     const applicableRange = queryRange.intersect(planRange);
     const planData = {
