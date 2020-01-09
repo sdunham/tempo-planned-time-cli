@@ -8,11 +8,15 @@ TODO: npm installation instructions here
 
 To install from source:
 ```bash
-git clone TODO-repo-url-here
+git clone git@github.com:sdunham/tempo-planned-time-cli.git
 cd tempo-planned-time-cli
 npm install
 # Optionally expose the command globally
 npm link
+
+# If you ran npm link, commands can be run as specified in the usage docs below
+# Otherwise, commands can be run using node:
+node bin/cli.js get
 ```
 
 ## Usage
