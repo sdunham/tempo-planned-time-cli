@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Scott Dunham <dunham.scott@gmail.com> (https://github.com/sdunham)",
-  "license": "ISC",
+  "license": "MIT",
   "keywords": [
     "cli",
     "tempo-planned-time",
