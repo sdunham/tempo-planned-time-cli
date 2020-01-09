@@ -7,10 +7,10 @@ This is a simple CLI program for fetching and displaying planned time from the T
 Install using npm or yarn:
 ```bash
 # NPM
-npm install -g tempo-planned-time-cli
+npm install -g tempo-planned-time
 
 # Yarn
-yarn global add tempo-planned-time-cli
+yarn global add tempo-planned-time
 
 # Start using it!
 tempo-planned-time
