@@ -1,6 +1,6 @@
 {
   "name": "tempo-planned-time",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Fetches and displays planned time from the Tempo REST API",
   "main": "bin/cli.js",
   "bin": {
@@ -10,7 +10,8 @@
     "node": ">=8.10"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preuninstall": "node lib/remove-all-config-data.js"
   },
   "author": "Scott Dunham <dunham.scott@gmail.com> (https://github.com/sdunham)",
   "repository": {

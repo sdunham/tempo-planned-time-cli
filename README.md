@@ -9,7 +9,7 @@ Install using npm or yarn:
 # NPM
 npm install -g tempo-planned-time
 
-# Yarn
+# Or Yarn
 yarn global add tempo-planned-time
 
 # Start using it!
@@ -57,4 +57,10 @@ tempo-planned-time get
 # Pull planned time for a specific range of days
 # Expected date format is YYYY-MM-DD, and a maximum range of 14 days can be specified
 tempo-planned-time get --from 2020-01-01  --to 2020-01-14
+
+# Pull tomorrow's planned time
+tempo-planned-time get --tomorrow
+
+# Pull planned time for the next 7 days (including today)
+tempo-planned-time get --week
 ```
