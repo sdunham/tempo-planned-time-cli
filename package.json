@@ -1,6 +1,6 @@
 {
   "name": "tempo-planned-time",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Fetches and displays planned time from the Tempo REST API",
   "main": "bin/cli.js",
   "bin": {
