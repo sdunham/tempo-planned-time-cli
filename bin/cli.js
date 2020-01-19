@@ -16,6 +16,7 @@ yargs
   .commandDir('../commands')
   .example('$0 config --account foo --token bar','Sets your accountId to "foo" and accessToken to "bar"')
   .example('$0 config --url https://mycompany.atlassian.net','Sets your jiraBaseUrl to "https://mycompany.atlassian.net"')
+  .example('$0 config', 'Outputs your current config data')
   .example('$0 get','Gets planned time for the current day')
   .example('$0 get --from 2020-01-10 --to 2020-01-12','Gets planned time between 2020-01-10 and 2020-01-12')
   .example('$0 get --tomorrow', 'Gets planned time for tomorrow')
